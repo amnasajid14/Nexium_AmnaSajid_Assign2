@@ -1,0 +1,100 @@
+{
+  "name": "LLM-Summarizer-Day9",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "summarize",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "512d9078-8056-442c-aaf5-571c2a4e121b",
+      "name": "Webhook",
+      "webhookId": "c34d3661-cbb3-423f-9a58-d9780eb877a1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "50571cce-1308-4810-b789-1341a5eda866",
+              "name": "text",
+              "value": "Large Language Models (LLMs) are advanced artificial intelligence systems designed to understand, generate, and manipulate human language at a high level of proficiency. Trained on vast amounts of text data from books, articles, websites, and other sources, these models leverage deep learning architectures—primarily transformer-based networks—to capture the complexities of grammar, context, tone, and meaning. LLMs, such as OpenAI's GPT series or Meta’s LLaMA, are capable of performing a wide range of natural language processing (NLP) tasks including text summarization, translation, sentiment analysis, question answering, and conversational dialogue generation.",
+              "type": "string"
+            },
+            {
+              "id": "0d79d3e7-06b8-421c-a2e4-5244827eb682",
+              "name": "summary",
+              "value": "This is a summary of the input text.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        220,
+        0
+      ],
+      "id": "a3ac45ee-355e-4ff4-921c-3826ac69dfb3",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        440,
+        0
+      ],
+      "id": "d0205152-9e61-47b5-a176-a0ff6d6b25ca",
+      "name": "Respond to Webhook"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "902282d0-2d26-40ba-b228-beba4834da37",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "628cabfb814eb2c009a2c690ba7bdbcacb51e22b67370e195f6013b83607cd2a"
+  },
+  "id": "woOsXWRbGDrKTUC3",
+  "tags": []
+}

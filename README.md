@@ -29,7 +29,7 @@ This project is a Blog Summariser built using **Next.js 15**, **Supabase**, and 
 npm install
 npm run dev
 
-## 🌐 Live Deployment
+ 🌐 Live Deployment
 Hosted on Vercel:
 https://vercel.com/amna-sajids-projects/nexium-amna-sajid-assign2
 

@@ -27,7 +27,7 @@ export default function Home() {
       const data = await res.json();
       setSummaryEn(data.summary);
       setSummaryUr(data.urduSummary);
-    } catch (err) {
+    } catch {
       alert("Something went wrong!");
     } finally {
       setLoading(false);

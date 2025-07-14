@@ -31,5 +31,5 @@ npm run dev
 
  🌐 Live Deployment
 Hosted on Vercel:
-https://vercel.com/amna-sajids-projects/nexium-amna-sajid-assign2
+https://nexium-amna-sajid-assign2.vercel.app/
 

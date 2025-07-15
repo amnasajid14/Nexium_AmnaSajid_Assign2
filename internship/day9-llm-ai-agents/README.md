@@ -1,36 +1,23 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Day 9 – LLM Flows & AI Agents in n8n
 
-## Getting Started
+This project demonstrates how to build an AI-powered summarization flow in **n8n** using webhooks and simulated large language model (LLM) integration. Due to OpenAI quota limitations, the summarization logic is mocked using a `Set` node. However, the workflow structure reflects a real-world LLM setup.
 
-First, run the development server:
+## 🧠 What This Workflow Does
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Accepts a **POST request** via Webhook
+- Receives a block of input text in JSON format
+- Simulates a call to an LLM (e.g., GPT-3.5 or Hugging Face model)
+- Returns a **summary** of the input text using a Respond to Webhook node
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Workflow Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+[Webhook]
+↓
+[Set (Mock Summary)]
+↓
+[Respond to Webhook]
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 How to Test
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Run the workflow in **n8n** using the **"Execute Workflow"** button
+2. Use [Postman](https://www.postman.com/)
